@@ -4,6 +4,7 @@ create table players (
     id serial primary key,
     first_name varchar(255) not null,
     last_name varchar(255) not null,
+    sex varchar(1) not null,
     email varchar(255) not null unique,
     passwordhash varchar(255) not null,
     profile_picture_path varchar(255),

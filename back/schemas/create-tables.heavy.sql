@@ -1,14 +1,3 @@
-create table fake_basketball_players (
-    id integer not null unique,
-    name text not null,
-    email text not null unique,
-    passwordhash text not null,
-    profile_picture_path text,
-    birthday date not null,
-    created_at timestamp not null,
-    updated_at timestamp not null
-);
-
 create table fake_basketball_games (
     id serial primary key,
     home_player_1_id integer not null references players(id),
