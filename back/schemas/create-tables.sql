@@ -8,6 +8,7 @@ create table players (
     email varchar(255) not null unique,
     passwordhash varchar(255) not null,
     profile_picture_path varchar(255),
+    height float not null,
     birthday date not null,
     created_at timestamp not null default now(),
     updated_at timestamp not null default now()

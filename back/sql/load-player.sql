@@ -5,9 +5,8 @@ LOAD DATA LOCAL INFILE '/home/george/Projects/MonoRepoTesting/fake-basketball/ba
     email,
     passwordhash,
     profile_picture_path,
-    birthday,
-    created_at,
-    updated_at
+    height,
+    birthday
 )
 SET
     id = NULL,

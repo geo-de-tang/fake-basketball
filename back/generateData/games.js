@@ -30,6 +30,15 @@ const games = faker.helpers.multiple(createGames, {
   count: 20_000,
 });
 
+const HEADER =
+  "home_player_1_id,home_player_2_id,\
+home_player_3_id,home_player_4_id,home_player_5_id,\
+away_player_1_id,away_player_2_id,away_player_3_id,\
+away_player_4_id,away_player_5_id,home_score,away_sc\
+ore,created_at,updated_at,began_at,ended_at,";
+
+console.log(HEADER);
+
 console.log(
   games
     .map(
