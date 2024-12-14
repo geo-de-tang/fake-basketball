@@ -1,5 +1,6 @@
 // CJS
-const { faker } = require("@faker-js/faker");
+import { faker } from "@faker-js/faker";
+import * as fs from "fs";
 
 function createRandomUser() {
   return {
@@ -10,6 +11,7 @@ function createRandomUser() {
     password: faker.internet.password(),
     height: faker.number.float({ min: 58, max: 84 }),
     avatar: faker.image.avatar(),
+    weight: faker.number.float({ min: 100, max: 350 }),
     birthdate: faker.date.birthdate(),
   };
 }
@@ -18,15 +20,18 @@ const users = faker.helpers.multiple(createRandomUser, {
   count: 200_000,
 });
 
-console.log("first_name,last_name,sex,email,password,avatar,height,birthdate,");
+fs.writeFileSync(
+  "players.csv",
+  "first_name,last_name,sex,email,password,avatar,height,weight,birthdate,\n"
+);
 
-console.log(
+fs.appendFileSync("players.csv",
   users
     .map(
       (user) =>
         `${user.first_name},${user.last_name},${user.sex},${user.email},${
           user.password
-        },${user.avatar},${user.height},${
+        },${user.avatar},${user.height},${user.weight},${
           user.birthdate.toISOString().split("T")[0]
         },`
     )

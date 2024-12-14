@@ -6,6 +6,7 @@ LOAD DATA LOCAL INFILE '/home/george/Projects/MonoRepoTesting/fake-basketball/ba
     passwordhash,
     profile_picture_path,
     height,
+    weight,
     birthday
 )
 SET

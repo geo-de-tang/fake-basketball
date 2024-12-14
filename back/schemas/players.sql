@@ -9,7 +9,11 @@ create table players (
     passwordhash varchar(255) not null,
     profile_picture_path varchar(255),
     height float not null,
+    weight float not null,
     birthday date not null,
+    twitter varchar(255),
+    instagram varchar(255),
+    youtube varchar(255),
     created_at timestamp not null default now(),
     updated_at timestamp not null default now()
-)
+);

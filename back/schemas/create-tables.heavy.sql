@@ -1,5 +1,6 @@
 create table fake_basketball_games (
     id serial primary key,
+    game_type text not null,
     home_player_1_id integer not null references players(id),
     home_player_2_id integer not null references players(id),
     home_player_3_id integer not null references players(id),
